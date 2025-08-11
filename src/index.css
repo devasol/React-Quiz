@@ -1,0 +1,429 @@
+:root {
+  --color-darkest: #343a40;
+  --color-dark: #495057;
+  --color-medium: #ced4da;
+  --color-light: #f1f3f5;
+
+  --color-theme: #1098ad;
+  --color-accent: #ffa94d;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-light);
+  background-color: var(--color-darkest);
+  padding: 1.6rem;
+}
+
+/* Responsive padding for different screen sizes */
+@media (min-width: 768px) {
+  body {
+    padding: 2.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 3.2rem;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  width: 100%;
+  max-width: 50rem;
+}
+
+/* Responsive main container */
+@media (max-width: 767px) {
+  .main {
+    max-width: 100%;
+  }
+}
+
+.app-header {
+  width: 100%;
+  max-width: 66rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Responsive header */
+@media (max-width: 767px) {
+  .app-header {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.error {
+  text-align: center;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  font-weight: 500;
+  padding: 2rem;
+  background-color: #495057;
+  border-radius: 100px;
+}
+
+/* Responsive error message */
+@media (max-width: 767px) {
+  .error {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+}
+
+img {
+  width: 14rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive image sizing */
+@media (max-width: 767px) {
+  img {
+    width: 10rem;
+  }
+}
+
+h1 {
+  font-family: "Codystar";
+  font-size: clamp(3.2rem, 5vw, 5.6rem);
+}
+
+h2 {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+h4 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress {
+  margin-bottom: 4rem;
+  display: grid;
+  justify-content: space-between;
+  gap: 1.2rem;
+  grid-template-columns: auto auto;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  color: var(--color-medium);
+}
+
+/* Responsive progress layout */
+@media (max-width: 767px) {
+  .progress {
+    margin-bottom: 2rem;
+    gap: 0.8rem;
+  }
+}
+
+progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 12px;
+  grid-column: 1 / -1;
+}
+
+::-webkit-progress-bar {
+  background-color: var(--color-medium);
+  border-radius: 100px;
+}
+::-webkit-progress-value {
+  background-color: var(--color-theme);
+  border-radius: 100px;
+}
+
+.btn {
+  display: block;
+  font-family: inherit;
+  color: inherit;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  border: 2px solid var(--color-dark);
+  background-color: var(--color-dark);
+  padding: 1.2rem 2.4rem;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: 0.3s;
+  min-height: 44px; /* Minimum touch target size */
+}
+
+/* Responsive button sizing */
+@media (max-width: 767px) {
+  .btn {
+    padding: 1.4rem 2rem;
+    font-size: 1.6rem;
+    min-height: 48px; /* Larger touch target on mobile */
+  }
+}
+
+.btn:not([disabled]):hover {
+  background-color: var(--color-darkest);
+}
+
+.btn-option:not([disabled]):hover {
+  transform: translateX(1.2rem);
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.btn-ui {
+  float: right;
+}
+
+/* Responsive footer layout */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  footer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .btn-ui {
+    float: none;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .timer {
+    order: -1; /* Show timer first on mobile */
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 3.2rem;
+}
+
+/* Responsive options spacing */
+@media (max-width: 767px) {
+  .options {
+    gap: 1.6rem; /* Larger gap for easier touch interaction */
+    margin-bottom: 2rem;
+  }
+}
+
+.btn-option {
+  width: 100%;
+  text-align: left;
+}
+
+.btn-option.correct {
+  background-color: var(--color-theme);
+  border: 2px solid var(--color-theme);
+  color: var(--color-light);
+}
+.btn-option.wrong {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  color: var(--color-darkest);
+}
+
+.answer {
+  transform: translateX(2rem);
+}
+
+.result {
+  background-color: var(--color-theme);
+  color: var(--color-light);
+  border-radius: 100px;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.result span {
+  font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+  margin-right: 4px;
+}
+
+.highscore {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+/* Responsive result and highscore */
+@media (max-width: 767px) {
+  .result {
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+
+  .highscore {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  gap: 1.6rem;
+
+  color: var(--color-medium);
+  font-size: 1.4rem;
+}
+
+.timer {
+  float: left;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  color: var(--color-medium);
+  border: 2px solid var(--color-dark);
+  padding: 1.35rem 2.8rem;
+  border-radius: 100px;
+}
+
+/* Responsive timer */
+@media (max-width: 767px) {
+  .timer {
+    float: none;
+    padding: 1rem 1.6rem;
+    font-size: 1.4rem;
+  }
+}
+
+/* CREDIT: https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+.loader {
+  width: 50px;
+  height: 24px;
+  background: radial-gradient(circle closest-side, currentColor 90%, #0000) 0%
+      50%,
+    radial-gradient(circle closest-side, currentColor 90%, #0000) 50% 50%,
+    radial-gradient(circle closest-side, currentColor 90%, #0000) 100% 50%;
+  background-size: calc(100% / 3) 12px;
+  background-repeat: no-repeat;
+  animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
+
+/* ********** */
+/* First counter example */
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: bold;
+  margin: 6rem;
+}
+
+.counter * {
+  font-size: inherit;
+  padding: 0.8rem;
+}
+
+/* Responsive counter */
+@media (max-width: 767px) {
+  .counter {
+    margin: 2rem;
+    gap: 0.8rem;
+  }
+}
+
+/* Additional responsive utilities */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  .app-header {
+    gap: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .btn {
+    padding: 1.6rem 1.8rem;
+    min-height: 52px;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  body {
+    padding: 1rem;
+  }
+
+  .app-header {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .main {
+    max-width: 90%;
+  }
+}
