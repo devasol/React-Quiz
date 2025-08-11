@@ -220,9 +220,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **GitHub**: [@your-username](https://github.com/devasol)
+- **GitHub**: [devasol](https://github.com/devasol)
 - **Email**: dawit8908@gmail.com
-- **LinkedIn**: [Your Name](https://www.linkedin.com/in/dawit-solomon-0450602a0/)
+- **LinkedIn**: [Dawit Solomon](https://www.linkedin.com/in/dawit-solomon-0450602a0/)
 
 ---
 
